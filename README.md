@@ -1,41 +1,88 @@
-<<<<<<< HEAD
+# Finance Tracker
 
-# Transaction-Tracking
+Finance Tracker is a Next.js-based web application that helps users manage their transactions and budget efficiently. It allows users to track their expenses, set budgets, and analyze financial data.
 
-=======
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Features
 
-## Getting Started
+- Add, delete, and view transactions
+- Set and manage budget limits
+- Dashboard with financial insights
+- Integrated MongoDB for database storage
+- Utilizes Redux Toolkit for state management
+- UI components built with ShadCN UI and Tailwind CSS
 
-First, run the development server:
+## Folder Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+finance-tracker/
+│── src/
+│   │── app/                           # Next.js App Router
+│   │   ├── api/
+│   │   │   ├── transactions/
+│   │   │   │   ├── route.js           # API route (GET, POST transactions)
+│   │   │   │   ├── [id]/route.js      # API route (DELETE transaction)
+│   │   │   ├── budget/route.js        # API route for budget settings
+│   │   ├── dashboard/page.js          # Dashboard page
+│   │   ├── page.js                    # Main app page (Home)
+│   │   ├── globals.css                # Global styles
+│   │── compo/                          # Reusable UI components
+│   │   ├── DashboardLayout.js          # Layout for dashboard
+│   │   ├── AddTransactionForm.js
+│   │   ├── TransactionList.js
+│   │   ├── BudgetForm.js
+│   │   ├── Dashboard.js
+│   │── components/                     # UI components from ShadCN UI
+│   │── store/                          # Redux Toolkit Store
+│   │   ├── transactionsSlice.js
+│   │   ├── budgetSlice.js
+│   │   ├── store.js
+│   │── models/                         # Mongoose Schemas
+│   │   ├── Transaction.js
+│   │   ├── Budget.js
+│   │── lib/                            # Utility files
+│   │   ├── mongodb.js                  # MongoDB connection
+│── public/                             # Static assets (icons, images)
+│── .env.local                          # Environment variables
+│── next.config.js                      # Next.js config
+│── package.json                        # Dependencies
+│── README.md                           # Documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/AbhishekPandey23/Transaction-Tracking.git
+   ```
+2. Navigate to the project folder:
+   ```sh
+   cd finance-tracker
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Set up your `.env.local` file with MongoDB connection string:
+   ```env
+   MONGODB_URI=your-mongodb-connection-string
+   ```
+5. Run the development server:
+   ```sh
+   npm run dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Frontend:** Next.js, React, Tailwind CSS, ShadCN UI
+- **State Management:** Redux Toolkit
+- **Backend:** Next.js API Routes, Node.js, Express
+- **Database:** MongoDB, Mongoose
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Contributions are welcome! Feel free to fork the repository and submit a pull request.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+This project is licensed under the MIT License.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
